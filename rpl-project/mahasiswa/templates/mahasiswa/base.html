@@ -1,0 +1,55 @@
+{% load static %}
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}RPL Django{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'mahasiswa/css/style.css' %}" />
+
+    <style>
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+      }
+
+      .logout-btn {
+        background-color: red;
+        color: white;
+        padding: 8px 14px;
+        text-decoration: none;
+        border-radius: 6px;
+      }
+
+      .logout-btn:hover {
+        background-color: darkred;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="topbar">
+        <h1>Lab M.6.13</h1>
+
+        <a href="/accounts/logout/" class="logout-btn">
+          Logout
+        </a>
+      </div>
+    </header>
+
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+
+    <footer>
+      <p>&copy; 2026 - Praktikum</p>
+    </footer>
+
+    <script src="{% static 'mahasiswa/js/main.js' %}"></script>
+  </body>
+</html>
